@@ -1,10 +1,13 @@
 body{
   color: rgb(255, 255, 178);
   font-family: 'Raleway', sans-serif;
-  background-color: rgb(0,51,51);
+  background-color: rgb(100,0,0);
 }
 body, .container, .lp, .lp .subcontainer, .info-lp p, .info-lp h2, #cont1 .subcontainer2{
   margin: 0 auto;
+}
+.bRed{
+  color: red;
 }
 #cont1 h1, #cont2 h1{
   text-align: right;
@@ -23,20 +26,37 @@ body, .container, .lp, .lp .subcontainer, .info-lp p, .info-lp h2, #cont1 .subco
 #cont1 .subcontainer2{
   display: table;
 }
-#foto{
-  
+#cont2 .subcontainer2{
+  text-align: center;
+}
+.dot{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px; 
+  background-color: white;
+}
+#fotoEffect{
+  width: 400px;
+  height: 600px;
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2;
+}
+#fotoEffect, .lp{
+  background-image: url("../img/bg.png");
+}
+#foto {
+  background-image: url(../img/foto.jpg);
+  background-color: rgb(150,0,0);
+  background-blend-mode: multiply;
+  width: 400px;
+  height: 600px;
+  background-size: auto;
+  opacity: 0.9;
+  z-index: 1;
   /*background-color: rgb(2,25,25);
   width: 400px;
   height: 600px;*/
-}
-.icon-edu1{
-  -webkit-mask: url(../icon/icon-edu1.svg);
-}
-.icon-edu2{
-  -webkit-mask: url(../icon/icon-edu2.svg);
-}
-.icon-edu3{
-  -webkit-mask: url(../icon/icon-edu3.svg);
 }
 .icon-twitter{
   -webkit-mask: url(../icon/twitter.svg);
@@ -60,11 +80,45 @@ body, .container, .lp, .lp .subcontainer, .info-lp p, .info-lp h2, #cont1 .subco
   margin-left: 15px;
   margin-top: 15px;
 }
+.icon-edu1{
+  -webkit-mask: url(../icon/icon-edu1.svg);
+}
+.icon-edu2{
+  -webkit-mask: url(../icon/icon-edu2.svg);
+}
+.icon-edu3{
+  -webkit-mask: url(../icon/icon-edu3.svg);
+}
 .icon-edu {
   -webkit-mask-size: cover;
   width: 90px;
   height: 90px;
   background-color: rgb(255, 255, 178);
+}
+.icon-ai{
+  -webkit-mask: url(../icon/icon-ai.svg);
+}
+.icon-css{
+  -webkit-mask: url(../icon/icon-css.svg);
+}
+.icon-fl{
+  -webkit-mask: url(../icon/icon-fl.svg);
+}
+.icon-html{
+  -webkit-mask: url(../icon/icon-html.svg);
+}
+.icon-psd{
+  -webkit-mask: url(../icon/icon-psd.svg);
+}
+.icon-ruby{
+  -webkit-mask: url(../icon/icon-ruby.svg);
+}
+.icon-hab{
+  -webkit-mask-size: cover;
+  width: 90px;
+  height: 90px;
+  background-color: rgb(255, 255, 178);
+  margin: 0 25px 0 25px;
 }
 .info-lp{
   width: 500px;
@@ -97,7 +151,7 @@ hr{
 }
 .lp{
   width: 100%;
-  background-image: url("../img/bg.png");
+  background-color: rgb(40,0,0);
 }
 .lp, .lp .subcontainer{
   top: 0;
@@ -112,4 +166,7 @@ hr{
 }
 span{
   color:rgb(255,0,0);
+}
+ul{
+  list-style-type: none;
 }
