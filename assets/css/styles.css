@@ -24,9 +24,10 @@ body, .container, .lp, .lp .subcontainer, .info-lp p, .info-lp h2, #cont1 .subco
   display: table;
 }
 #foto{
-  background-color: rgb(2,25,25);
+  
+  /*background-color: rgb(2,25,25);
   width: 400px;
-  height: 600px;
+  height: 600px;*/
 }
 .icon-edu1{
   -webkit-mask: url(../icon/icon-edu1.svg);
