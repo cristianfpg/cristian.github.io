@@ -1,13 +1,13 @@
 body{
   color: rgb(255, 255, 178);
   font-family: 'Raleway', sans-serif;
-  background-color: rgb(100,0,0);
+  background-color: rgb(3,25,43);
 }
 body, .container, .lp, .lp .subcontainer, .info-lp p, .info-lp h2, #cont1 .subcontainer2{
   margin: 0 auto;
 }
-.bRed{
-  color: red;
+.minititulo, span{
+  color:rgb(255,130,0);
 }
 #cont1 h1, #cont2 h1{
   text-align: right;
@@ -47,7 +47,7 @@ body, .container, .lp, .lp .subcontainer, .info-lp p, .info-lp h2, #cont1 .subco
 }
 #foto {
   background-image: url(../img/foto.jpg);
-  background-color: rgb(150,0,0);
+  background-color: rgb(3,25,43);
   background-blend-mode: multiply;
   width: 400px;
   height: 600px;
@@ -151,7 +151,7 @@ hr{
 }
 .lp{
   width: 100%;
-  background-color: rgb(40,0,0);
+  background-color: rgb(3,25,43);
 }
 .lp, .lp .subcontainer{
   top: 0;
@@ -163,9 +163,6 @@ hr{
 }
 .lp .subcontainer, .container{
   width: 900px;
-}
-span{
-  color:rgb(255,0,0);
 }
 ul{
   list-style-type: none;
