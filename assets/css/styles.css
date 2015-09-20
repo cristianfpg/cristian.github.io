@@ -3,24 +3,70 @@ body{
   font-family: 'Raleway', sans-serif;
   background-color: rgb(0,51,51);
 }
-body, .container, .lp, .subcontainer, .info-lp p{
+body, .container, .lp, .lp .subcontainer, .info-lp p, .info-lp h2, #cont1 .subcontainer2{
   margin: 0 auto;
 }
-#cont1 h1{
+#cont1 h1, #cont2 h1{
   text-align: right;
   margin-top: 0;
   margin-bottom: 50px;
+}
+#cont1 p{
+  width: 120px;
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 19px 0 19px;
+}
+#cont1, #cont2{
+  padding-top: 40px;
+}
+#cont1 .subcontainer2{
+  display: table;
 }
 #foto{
   background-color: rgb(2,25,25);
   width: 400px;
   height: 600px;
 }
-.icon-edu{
-  width: 200px;
+.icon-edu1{
+  -webkit-mask: url(../icon/icon-edu1.svg);
+}
+.icon-edu2{
+  -webkit-mask: url(../icon/icon-edu2.svg);
+}
+.icon-edu3{
+  -webkit-mask: url(../icon/icon-edu3.svg);
+}
+.icon-twitter{
+  -webkit-mask: url(../icon/twitter.svg);
+  width: 39px;
+  height: 32px;
+}
+.icon-facebook{
+  -webkit-mask: url(../icon/facebook.svg);
+  width: 32px;
+  height: 32px;
+}
+.icon-github{
+  -webkit-mask: url(../icon/github.svg);
+  width: 32px;
+  height: 32px;
+}
+.icon-net{
+  -webkit-mask-size: cover;
+  background-color: rgb(255, 255, 178);
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.icon-edu {
+  -webkit-mask-size: cover;
+  width: 90px;
+  height: 90px;
+  background-color: rgb(255, 255, 178);
 }
 .info-lp{
-  width: 400px;
+  width: 500px;
   top: 0px;
   right: 0px;
   text-align: center;
@@ -30,7 +76,7 @@ body, .container, .lp, .subcontainer, .info-lp p{
   width: 200px;
   font-size: 20px;
 }
-.info-lp, .lp, .subcontainer {
+.info-lp, .lp, .lp .subcontainer {
   height: 600px;
 }
 h1, h2{
@@ -39,27 +85,30 @@ h1, h2{
 h2{
   font-size: 17px;
 }
+hr, #cont1 h1, #cont2 h1{
+  display: inline-block;
+}
 hr{
+  width: 643px; 
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(255, 255, 178, 0), rgba(255, 255, 178, 0.75), rgba(255, 255, 178, 0));
-  margin: 50px;
 }
 .lp{
   width: 100%;
   background-image: url("../img/bg.png");
 }
-.lp, .subcontainer{
+.lp, .lp .subcontainer{
   top: 0;
   left: 0;
   right: 0;
 }
-.lp, .subcontainer, .container{
+.lp, .lp .subcontainer, .container{
   position: relative;
+}
+.lp .subcontainer, .container{
+  width: 900px;
 }
 span{
   color:rgb(255,0,0);
-}
-.subcontainer, .container{
-  width: 800px;
 }
