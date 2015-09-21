@@ -5,12 +5,15 @@
   border-radius: 7px;
   margin: 20px 0 20px 0;
 }
+a{
+  cursor: pointer;
+}
 body{
   color: rgb(255, 255, 178);
   font-family: 'Raleway', sans-serif;
   background-color: rgb(3,25,43);
 }
-body, .container, .lp, .lp .subcontainerlp, .info-lp p, .info-lp h2, #cont1 .subcontainer2, .hr2, .hr3, #cont3 .subcontainer2{
+body, .container, .lp, .lp .subcontainerlp, .info-lp p, .info-lp h2, #cont1 .subcontainer2, .hr2, #cont3 .subcontainer2, .hr3{
   margin: 0 auto;
 }
 .minititulo, span{
@@ -134,14 +137,14 @@ body, .container, .lp, .lp .subcontainerlp, .info-lp p, .info-lp h2, #cont1 .sub
 .icon-ai{
   -webkit-mask: url(../icon/icon-ai.svg);
 }
-.icon-css{
-  -webkit-mask: url(../icon/icon-css.svg);
+.icon-js{
+  -webkit-mask: url(../icon/icon-js.svg);
 }
 .icon-fl{
   -webkit-mask: url(../icon/icon-fl.svg);
 }
-.icon-html{
-  -webkit-mask: url(../icon/icon-html.svg);
+.icon-csshtml{
+  -webkit-mask: url(../icon/icon-csshtml.svg);
 }
 .icon-psd{
   -webkit-mask: url(../icon/icon-psd.svg);
@@ -191,6 +194,16 @@ hr{
   width: 100%;
   display: block;
 }
+#hr3a{
+  position: fixed;
+  top: 2px;
+  z-index: 1000;
+}
+#hr3b{
+  position: fixed;
+  top: 32px;
+  z-index: 1000;
+}
 li div{
   margin-bottom: 10px;
 }
@@ -222,6 +235,7 @@ li div{
   height: 35px;
   z-index: 999;
   background-color: rgba(3,25,43,1);
+  top: 0;
 }
 .txt-navbar{
   vertical-align: middle;
@@ -239,10 +253,10 @@ ul:nth-of-type(2) li .dot{ /* photoshop */
 ul:nth-of-type(3) li .dot{ /* flash */
   background-color: rgb(159, 10, 30);
 }
-ul:nth-of-type(4) li .dot{ /* html */
+ul:nth-of-type(4) li .dot{ /* css / html */
   background-color: rgb(161, 40, 10);
 }
-ul:nth-of-type(5) li .dot{ /* css */
+ul:nth-of-type(5) li .dot{ /* js */
   background-color: rgb(83, 255, 30);
 }
 ul:nth-of-type(6) li .dot{ /* ruby */
