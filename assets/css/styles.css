@@ -182,7 +182,7 @@ hr, .container h1, ul{
   display: inline-block;
 }
 hr{
-  width: 643px; 
+  width: 630px; 
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(255, 255, 178, 0), rgba(255, 255, 178, 0.75), rgba(255, 255, 178, 0));
