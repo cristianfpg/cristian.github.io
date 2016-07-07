@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="assets/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Cristian Pacheco • Desarrollador Front-End</title>
 </head>
 <body>
@@ -22,11 +23,35 @@
 		</section>
 	</div>
 	<div id="content">
-		<div class="olakase" id="about"></div>
-		<div class="olakase" id="portfolio"></div>
-		<div class="olakase" id="contact"></div>
+		<div class="subcontent" id="about">
+			<div id="avatar">
+				<img src="assets/png/photo.png" alt="photo" id="photo">
+				<div class="circle"></div>
+				<canvas id="canvas" width="400" height="400"></canvas>
+			</div>
+			<div class="column"></div>
+			<div class="column"></div>
+		</div>
+		<div class="subcontent" id="portfolio"></div>
+		<div class="subcontent" id="contact"></div>
+	</div>
+	<div id="btns">
+		<a href="#about"><img src="assets/png/icon-about.png" alt="about"></a>
+		<a href="#portfolio"><img src="assets/png/icon-portfolio.png" alt="portfolio"></a>
+		<a href="#contact"><img src="assets/png/icon-contact.png" alt="contact"></a>
 	</div>
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script src="assets/js/noframework.waypoints.min.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script>
+		init();
+		var waypoint = new Waypoint({
+		  element: document.getElementById('about'),
+		  handler: function() {
+		    $('#btns').css('opacity','1').addClass('animated bounceInUp');
+		  }
+		})
+	</script>
 </body>
 </html>
