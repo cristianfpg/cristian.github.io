@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<link rel="stylesheet" href="http://s.mlcdn.co/animate.css">-->
+	<link rel="stylesheet" href="assets/css/animate.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Cristian Pacheco • Desarrollador Front-End</title>
 </head>
 <body>
@@ -17,7 +20,7 @@
 			<span>l</span>
 			<a href="#portfolio">Portafolio</a>
 			<span>l</span>
-			<a href="#contact">Contacto</a>
+			<a class="btnContact">Contacto</a>
 		</section>
 	</div>
 	<div id="content">
@@ -27,31 +30,54 @@
 				<div class="circle"></div>
 				<canvas id="canvas" width="400" height="400"></canvas>
 			</div>
-			<div class="column"></div>
-			<div class="column"></div>
+			<div class="column">
+				<div class="subtitle">
+					<img src="assets/png/icon-skills.png" alt="about">
+					<h3 class="skillsST">Habilidades</h3>
+				</div>
+				<div class="line"></div>
+				<img src="assets/svg/skills.svg" alt="">
+			</div>
+			<div class="column">
+				<div class="subtitle">
+					<img src="assets/png/icon-about2.png" alt="about">
+					<h3>Acerca de mí</h3>
+				</div>
+				<div class="line"></div>
+				<p>Desarrollador web fan de Spotify, aficionado a los videojuegos y siempre dispuesto a aprender nuevas tecnologías.</p>
+				<p>Con aptitudes en imagen corporativa, fotografía, UX/UI, experiencia en artes gráficas y publicidad. </p>
+			</div>
 		</div>
-		<div class="subcontent" id="portfolio"></div>
-		<div class="subcontent" id="contact"></div>
+		<div class="subcontent" id="portfolio">
+			<div class="project"></div>
+			<div class="project"></div>
+			<div class="project"></div>
+			<div class="project"></div>
+			<div class="project"></div>
+			<div class="project"></div>
+		</div>
+		<div id="contact">
+			<p class="close">X</p>
+			<form action="https://formspree.io/cristian.fpg@hotmail.com" method="POST">
+				<input type="text" name="_gotcha" style="display:none" />
+				<input type="hidden" name="_next" value="#thanks" />
+				<input type="hidden" name="_subject" value="Mensaje del site" />
+				<input type="email" placeholder="*E-mail" name="_replyto" required>
+				<textarea cols="30" rows="10" placeholder="*Mensaje" maxlength="240" name="text" required></textarea>
+				<input type="image" src="assets/png/icon-contact2.png" value="Send">
+			</form>
+		</div>
 	</div>
 	<div id="btns">
 		<a href="#about"><img src="assets/png/icon-about.png" alt="about"></a>
 		<a href="#portfolio"><img src="assets/png/icon-portfolio.png" alt="portfolio"></a>
-		<a href="#contact"><img src="assets/png/icon-contact.png" alt="contact"></a>
+		<a class="btnContact"><img src="assets/png/icon-contact.png" alt="contact"></a>
+		<a href="#lp"><img src="assets/png/up.png" alt="up"></a>
 	</div>
+	<div id="thanks">asd</div>
 </body>
-<link rel="stylesheet" href="http://s.mlcdn.co/animate.css">
-<link rel="stylesheet" href="assets/css/style.css">
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="assets/js/noframework.waypoints.min.js"></script>
 <script src="assets/js/script.js"></script>
-<script>
-	init();
-	var waypoint = new Waypoint({
-	  element: document.getElementById('about'),
-	  handler: function() {
-	    $('#btns').css('opacity','1').addClass('animated bounceInUp');
-	  }
-	})
-</script>
 </html>
