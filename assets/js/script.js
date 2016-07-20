@@ -39,7 +39,7 @@ $(function() {
 /* waypoints */
 var valid = true;
 var waypoint1 = new Waypoint({
-  element: document.getElementById('about'),
+  element: document.getElementById('titles'),
   handler: function() {
     $('#btns').removeClass();
     $('#btns').css('opacity','1').addClass('animated bounceInUp');
