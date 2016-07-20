@@ -23,7 +23,7 @@ for(var i = 0; i < $('#portfolio').children().length; i++){
 }
 /* animate scroll/gotosection */
 $(function() {
-  $('a[href*="#"]:not([href="#"])').click(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() { // get all anchors (a) that contains # in href but exclude anchors with href exaclty equals to #
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -68,6 +68,26 @@ $('.close').click(function(){
   $('#contact').removeClass();
   $('#contact').addClass('animated fadeOutRight');
 });
+/* thanks message*/
+$.fn.extend({
+    animateCss: function () {
+        $('#contact').removeClass();
+        $('#contact').addClass('animated fadeOutRight');
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $(this).addClass('animated fadeInUp').one(animationEnd, function() {
+            setTimeout(function(){
+              $('#thanks').removeClass('animated fadeInUp');
+              $('#thanks').addClass('animated fadeOutUp').one(animationEnd, function(){
+                window.location.replace('');
+              });
+            }, 1000);
+        });
+    }
+});
+if (location.hash == '#thanks') {
+  $('#thanks').animateCss();
+}
+
 /* adobe animation */
 (function (lib, img, cjs, ss) {
 
