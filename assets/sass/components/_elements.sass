@@ -1,0 +1,76 @@
+.dot
+  font-family: monument_extendedultrabold
+  font-size: 11px
+  // solo para que el plugin blotter.js encuentre la fuente que quiero para el efecto
+
+.container
+  width: 85%
+  max-width: 1100px
+  margin: 0 auto
+
+$sidebarW: 120px
+.main
+  width: calc(100% - $sidebarW)
+  margin-left: $sidebarW
+
+.sidebar
+  width: $sidebarW
+  height: 100%
+  position: fixed
+  background-color: $gray
+
+.scrollbar
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 1px
+  height: 60%
+  background-color: $lightGray
+  +prefix(transform, translate(-50%, -50%), webkit ms)
+  .bar
+    position: absolute
+    top: 0
+    left: 0
+    background-color: $altColor
+    width: 100%
+    height: 25%
+
+.title
+  color: white
+  font-family: monument_extendedultrabold
+  font-size: 80px
+  letter-spacing: 1.6px
+  display: table
+  &:after
+    content: ""
+    width: 120px
+    height: 3px
+    background-color: $altColor
+    position: absolute
+    bottom: 6px
+    left: -18px
+  strong
+    position: absolute
+    bottom: 0
+    color: white
+    -webkit-text-fill-color: black
+    -webkit-text-stroke-width: 2px
+    -webkit-text-stroke-color: white
+    font-size: 79px
+  &.right
+    strong
+      right: -13px
+  &.left
+    padding-left: 13px
+    strong
+      left: 0
+
+.regular-text
+  font-family: space_groteskregular
+  font-size: 18px
+  font-weight: 300
+  line-height: 1.39
+  letter-spacing: 3px
+  color: #ffffff
+
+  

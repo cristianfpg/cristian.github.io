@@ -1,82 +1,44 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-	<script>window.location.href = "/snake";</script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--<link rel="stylesheet" href="http://s.mlcdn.co/animate.css">-->
-	<link rel="stylesheet" href="assets/css/animate.css">
-	<link rel="stylesheet" href="assets/css/style.css">
-	<title>Cristian Pacheco • Desarrollador Front-End</title>
+	<title>Cristian Pacheco | Web Developer</title>
+	<link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
-	<div id="lp">
-		<img id="bg" alt="background" src="assets/svg/bg-about.svg">
-		<section id="titles">
-			<h1>Cristian Pacheco</h1>
-			<h2>Desarrollador Front-End</h2>
+<body class="home">
+	<section class="topbar">
+		<p class="logo">CRISTIAN PACHECO<strong class="dot"></strong></p>
+		<nav class="navbar">
+			<a href="https://codepen.io/cristianfpg" class="regular-text" target="_blank">codepen</a>
+			<a href="https://www.linkedin.com/in/cristianpachecog/" class="regular-text" target="_blank">linkedin</a>
+			<a href="https://github.com/cristianfpg" class="regular-text" target="_blank">github</a>
+			<a data-scroll href="#about" class="regular-text">contact</a>
+		</nav>
+	</section>
+	<aside class="sidebar">
+		<div class="scrollbar" id="scrollbar"><div class="bar" id="bar"></div></div>
+	</aside>
+	<main class="main">
+		<section class="hero container">
+			<img class="me" src="assets/img/me.png" alt="Web Developer">
+			<h1 class="main-title">
+				<span id="hello" class="hello"></span>
+				<span class="greetings second">I AM A <strong>WEB DEVELOPER</strong></span>
+				<span class="greetings regular-text">based in Bogotá, Colombia.</span>
+			</h1>
 		</section>
-		<section id="links">
-			<a href="#about">Acerca de mí</a>
-			<span>l</span>
-			<a href="#portfolio">Portafolio</a>
-			<span>l</span>
-			<a class="btnContact">Contacto</a>
+		<section id="about" class="about">
+			<div class="container">
+				<h2 class="title right">ABOUT<strong>UT</strong></h2>
+				<p class="content regular-text"><span>Programmer</span> as a profession, <span>videogames</span> as a hobby, amateur <span>lasagna</span> taster in my free time and <span>metal</span> lover forever. Always enjoying every digital product both in its optimal user interface and an impeccable performance, finding in javascript the combination of those two worlds.</p>
+				<div class="terminal"></div>
+			</div>
 		</section>
-	</div>
-	<div id="content">
-		<div class="subcontent" id="about">
-			<div id="avatar">
-				<img src="assets/png/photo.png" alt="photo" id="photo">
-				<div class="circle"></div>
-				<canvas id="canvas" width="400" height="400"></canvas>
-			</div>
-			<div class="column">
-				<div class="subtitle">
-					<img src="assets/png/icon-skills.png" alt="about">
-					<h3 class="skillsST">Habilidades</h3>
-				</div>
-				<div class="line"></div>
-				<img src="assets/svg/skills.svg" alt="">
-			</div>
-			<div class="column">
-				<div class="subtitle">
-					<img src="assets/png/icon-about2.png" alt="about">
-					<h3>Acerca de mí</h3>
-				</div>
-				<div class="line"></div>
-			</div>
-		</div>
-		<div class="subcontent" id="portfolio">
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
-			<div class="project"></div>
-		</div>
-		<div id="contact">
-			<p class="close">X</p>
-			<form action="https://formspree.io/cristian.fpg@hotmail.com" method="POST">
-				<input type="text" name="_gotcha" style="display:none" />
-				<input type="hidden" name="_next" value="#thanks" />
-				<input type="hidden" name="_subject" value="Mensaje del site" />
-				<input type="email" placeholder="*E-mail" name="_replyto" required>
-				<textarea cols="30" rows="10" placeholder="*Mensaje" maxlength="240" name="text" required></textarea>
-				<input type="image" src="assets/png/icon-contact2.png" value="Send">
-			</form>
-		</div>
-	</div>
-	<div id="thanks">Mensaje enviado!</div>
-	<div id="btns">
-		<a href="#about"><img src="assets/png/icon-about.png" alt="about"></a>
-		<a href="#portfolio"><img src="assets/png/icon-portfolio.png" alt="portfolio"></a>
-		<a class="btnContact"><img src="assets/png/icon-contact.png" alt="contact"></a>
-		<a href="#lp"><img src="assets/png/up.png" alt="up"></a>
-	</div>
+	</main>
+	<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+	<script src="assets/libs/blotter/blotter.min.js"></script>
+	<script src="assets/libs/blotter/channelSplitMaterial.js"></script>
+	<script defer src="assets/js/scripts.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
-<script src="assets/js/noframework.waypoints.min.js"></script>
-<script src="assets/js/script.js"></script>
 </html>

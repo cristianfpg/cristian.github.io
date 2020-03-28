@@ -1,0 +1,89 @@
+body.home
+  .topbar
+    padding: 50px 40px
+    position: absolute
+    width: 100%
+    top: 0
+    left: 0
+    z-index: 1
+    .logo
+      font-family: space_groteskbold
+      font-size: 20px
+      letter-spacing: 10px
+      color: #ffffff
+      display: inline-block
+    .navbar
+      float: right
+      a
+        text-align: right
+        margin-left: 40px
+  .hero
+    height: 100vh
+    .me
+      position: absolute
+      top: 0 
+      right: 0
+    .main-title
+      position: absolute
+      top: 50%
+      width: 90%
+      left: 0
+      +prefix(transform, translateY(-50%), webkit ms)
+      > *
+        display: block
+      .hello
+        opacity: 0
+        +prefix(transition, opacity ease-in-out 1s, webkit ms)
+        &.active
+          opacity: 1
+      .second
+        font-family: monument_extendedregular
+        font-size: 40px
+        letter-spacing: 0.8px
+        color: #ffffff
+        line-height: 0.9
+        margin-bottom: 10px
+        strong
+          font-family: monument_extendedultrabold
+          color: white
+          -webkit-text-fill-color: black
+          -webkit-text-stroke-width: 1px
+          -webkit-text-stroke-color: white
+      .greetings
+        opacity: 0
+        &.active
+          +prefix(transition, opacity ease-in-out 1s, webkit ms)
+          +prefix(transition-delay, 1s, webkit ms)
+          opacity: 1
+  .about
+    padding-top: 120px
+    // &:before
+    //  content: ""
+    //  background-color: $gray
+    //  position: absolute
+    //  top: -25px
+    //  right: 0
+    //  width: 50px
+    //  height: 50px
+    //  +prefix(transform, skewY(-45deg), webkit ms)
+    &:after
+      content: ""
+      width: 70%
+      height: 100%
+      background-color: $gray 
+      position: absolute
+      top: 0
+      right: 0
+      z-index: -1
+    .content
+      max-width: 600px
+      margin: 60px 0 0 100px
+    .terminal
+      width: 600px
+      height: 380px
+      border: 2px solid $gray
+      border-radius: 10px
+      box-shadow: 0 0 18px 5px rgba(black, 0.5)
+      background-color: black
+      margin: 100px auto -20px
+      margin-right: 0
