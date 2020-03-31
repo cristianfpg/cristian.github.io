@@ -92,13 +92,19 @@ body img {
   margin: 0 auto;
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .main {
   width: calc(100% - $sidebarW);
-  margin-left: 120px;
+  margin-left: 100px;
 }
 
 .sidebar {
-  width: 120px;
+  width: 100px;
   height: 100%;
   position: fixed;
   background-color: #0c0c0c;
@@ -108,7 +114,7 @@ body img {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 1px;
+  width: 2px;
   height: 60%;
   background-color: #40454a;
   -webkit-transform: translate(-50%, -50%);
@@ -119,7 +125,7 @@ body img {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #c79b3b;
+  background-color: #f7e018;
   width: 100%;
   height: 25%;
 }
@@ -135,7 +141,7 @@ body img {
   content: "";
   width: 120px;
   height: 3px;
-  background-color: #c79b3b;
+  background-color: #f7e018;
   position: absolute;
   bottom: 6px;
   left: -18px;
@@ -191,7 +197,7 @@ body.home .topbar .navbar a {
   margin-left: 40px;
 }
 body.home .hero {
-  height: 100vh;
+  height: 95vh;
 }
 body.home .hero .me {
   position: absolute;
@@ -247,7 +253,7 @@ body.home .hero .main-title .greetings.active {
   opacity: 1;
 }
 body.home .about {
-  padding-top: 120px;
+  padding-top: 200px;
 }
 body.home .about:after {
   content: "";
@@ -272,6 +278,26 @@ body.home .about .terminal {
   background-color: black;
   margin: 100px auto -20px;
   margin-right: 0;
+}
+body.home .snippets {
+  padding: 200px 0;
+}
+body.home .snippets:after {
+  content: "";
+  width: 90%;
+  height: calc(100% - 400px);
+  background-color: #0c0c0c;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+body.home .snippets .wrapper {
+  padding-top: 50px;
+}
+body.home .snippets .snippet {
+  width: 50%;
+  float: left;
 }
 
 /*# sourceMappingURL=styles.css.map */
