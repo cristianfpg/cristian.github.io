@@ -165,6 +165,11 @@ body img {
   left: 0;
 }
 
+.content-text {
+  max-width: 600px;
+  margin: 20px 0 0 100px;
+}
+
 .regular-text {
   font-family: space_groteskregular;
   font-size: 18px;
@@ -174,7 +179,7 @@ body img {
   color: #ffffff;
 }
 
-body.home .topbar {
+body.home section.topbar {
   padding: 50px 40px;
   position: absolute;
   width: 100%;
@@ -182,29 +187,29 @@ body.home .topbar {
   left: 0;
   z-index: 1;
 }
-body.home .topbar .logo {
+body.home section.topbar .logo {
   font-family: space_groteskbold;
   font-size: 20px;
   letter-spacing: 10px;
   color: #ffffff;
   display: inline-block;
 }
-body.home .topbar .navbar {
+body.home section.topbar .navbar {
   float: right;
 }
-body.home .topbar .navbar a {
+body.home section.topbar .navbar a {
   text-align: right;
   margin-left: 40px;
 }
-body.home .hero {
+body.home section.hero {
   height: 95vh;
 }
-body.home .hero .me {
+body.home section.hero .me {
   position: absolute;
   top: 0;
   right: 0;
 }
-body.home .hero .main-title {
+body.home section.hero .main-title {
   position: absolute;
   top: 50%;
   width: 90%;
@@ -213,19 +218,19 @@ body.home .hero .main-title {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-body.home .hero .main-title > * {
+body.home section.hero .main-title > * {
   display: block;
 }
-body.home .hero .main-title .hello {
+body.home section.hero .main-title .hello {
   opacity: 0;
   -webkit-transition: opacity ease-in-out 1s;
   -ms-transition: opacity ease-in-out 1s;
   transition: opacity ease-in-out 1s;
 }
-body.home .hero .main-title .hello.active {
+body.home section.hero .main-title .hello.active {
   opacity: 1;
 }
-body.home .hero .main-title .second {
+body.home section.hero .main-title .second {
   font-family: monument_extendedregular;
   font-size: 40px;
   letter-spacing: 0.8px;
@@ -233,17 +238,17 @@ body.home .hero .main-title .second {
   line-height: 0.9;
   margin-bottom: 10px;
 }
-body.home .hero .main-title .second strong {
+body.home section.hero .main-title .second strong {
   font-family: monument_extendedultrabold;
   color: white;
   -webkit-text-fill-color: black;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
 }
-body.home .hero .main-title .greetings {
+body.home section.hero .main-title .greetings {
   opacity: 0;
 }
-body.home .hero .main-title .greetings.active {
+body.home section.hero .main-title .greetings.active {
   -webkit-transition: opacity ease-in-out 1s;
   -ms-transition: opacity ease-in-out 1s;
   transition: opacity ease-in-out 1s;
@@ -252,10 +257,10 @@ body.home .hero .main-title .greetings.active {
   transition-delay: 1s;
   opacity: 1;
 }
-body.home .about {
+body.home section.about {
   padding-top: 200px;
 }
-body.home .about:after {
+body.home section.about:after {
   content: "";
   width: 70%;
   height: 100%;
@@ -265,14 +270,10 @@ body.home .about:after {
   right: 0;
   z-index: -1;
 }
-body.home .about .title {
+body.home section.about .title {
   margin-bottom: 60px;
 }
-body.home .about .content {
-  max-width: 600px;
-  margin: 20px 0 0 100px;
-}
-body.home .about .terminal {
+body.home section.about .terminal {
   width: 600px;
   height: 380px;
   border: 2px solid #0c0c0c;
@@ -282,10 +283,10 @@ body.home .about .terminal {
   margin: 100px auto -20px;
   margin-right: 0;
 }
-body.home .snippets {
+body.home section.snippets {
   padding: 200px 0;
 }
-body.home .snippets:after {
+body.home section.snippets:after {
   content: "";
   width: 90%;
   height: calc(100% - 400px);
@@ -295,12 +296,18 @@ body.home .snippets:after {
   left: 0;
   z-index: -1;
 }
-body.home .snippets .wrapper {
+body.home section.snippets .wrapper {
   padding-top: 50px;
 }
-body.home .snippets .snippet {
+body.home section.snippets .snippet {
   width: 50%;
   float: left;
+}
+body.home section.contact {
+  margin-top: 150px;
+}
+body.home section.contact .title {
+  margin-bottom: 60px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,5 +1,5 @@
 body.home
-  .topbar
+  section.topbar
     padding: 50px 40px
     position: absolute
     width: 100%
@@ -17,7 +17,7 @@ body.home
       a
         text-align: right
         margin-left: 40px
-  .hero
+  section.hero
     height: 95vh
     .me
       position: absolute
@@ -55,7 +55,7 @@ body.home
           +prefix(transition, opacity ease-in-out 1s, webkit ms)
           +prefix(transition-delay, 1s, webkit ms)
           opacity: 1
-  .about
+  section.about
     padding-top: 200px
     &:after
       content: ""
@@ -68,9 +68,6 @@ body.home
       z-index: -1
     .title
       margin-bottom: 60px
-    .content
-      max-width: 600px
-      margin: 20px 0 0 100px
     .terminal
       width: 600px
       height: 380px
@@ -80,7 +77,7 @@ body.home
       background-color: black
       margin: 100px auto -20px
       margin-right: 0
-  .snippets
+  section.snippets
     padding: 200px 0
     &:after
       content: ""
@@ -96,3 +93,7 @@ body.home
     .snippet
       width: 50%
       float: left
+  section.contact
+    margin-top: 150px
+    .title
+      margin-bottom: 60px
