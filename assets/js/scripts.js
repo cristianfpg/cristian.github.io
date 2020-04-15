@@ -90,13 +90,12 @@ const programmerLines = [
   "- CSS",
   "- CSS",
 ]
-const speedText = 100
 
 class TerminalEffect {
-  constructor(lines, speedText, $wrapper){
-    this.lines = lines
-    this.speedText = speedText
-    this.$wrapper = $wrapper
+  constructor(params){
+    this.lines = params.lines
+    this.speedText = params.speedText
+    this.$wrapper = params.wrapper
     this.turn = 0
     this.indexLine = 0
   }
@@ -131,7 +130,11 @@ class TerminalEffect {
     this.turn = 0
   }
 }
-const AnyLine = new TerminalEffect(programmerLines, speedText, $terminal)
+const AnyLine = new TerminalEffect({
+  lines: programmerLines, 
+  speedText: 120, 
+  wrapper: $terminal
+})
 
 /* END TERMINAL EFFECT */
 
@@ -152,5 +155,16 @@ document.addEventListener("scroll",(e) => {
 
   $bar.style.top = barPercent+"px"
   /* END NAVBAR TRANSITION */
+
+  /* INIT TRIGGER TERMINAL EFFECT */
+  const $about = document.getElementById("about")
+  const limitAbout = $about.offsetTop - (windowHeight/2)
+  const ACTIVECLASS = "active"
+  const isAboutActive = $about.classList.contains(ACTIVECLASS)
+
+  if(scrollTop > limitAbout && !isAboutActive){
+    $about.classList.add(ACTIVECLASS)
+    AnyLine.start()
+  }
 })
 /* END SCROLL EVENT */
