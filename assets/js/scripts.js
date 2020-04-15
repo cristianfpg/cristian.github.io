@@ -61,34 +61,15 @@ setTimeout(()=>{
 // http://vanilla-js.com/
 const $terminal = document.getElementById("terminal")
 const programmerLines = [
-  // {
-  //   noChange: "CP-CV:~ ",
-  //   before: "cd programmer",
-  //   after: "programmer$"
-  // },
-  "- HTML",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
-  "- CSS",
+  {
+    beginLine: "CP-CV:~ ",
+    animated: "node programmer",
+  },
+  "- CSS: 9/10",
+  "- Javascript: 8/10",
+  "- React: 7.5/10",
+  "- PHP: 7/10",
+  "- Python: 6/10",
 ]
 
 class TerminalEffect {
@@ -100,30 +81,43 @@ class TerminalEffect {
     this.indexLine = 0
   }
   start(){
-    const actualLine = this.lines[this.indexLine]
-    if(actualLine){
-      actualLine.split("")
-      const $span = document.createElement("span")
-      this.sto = setInterval(()=>{
-        const str = document.createTextNode(actualLine[this.turn])
-        $span.appendChild(str)
-        this.$wrapper.appendChild($span)
-        
-        this.turn++
-        if(this.turn == actualLine.length){
-          this.newLine()
-        }
+    this.animateLine()
+  }
+  animateLine(){
+    const getText = this.getLine()
+    if(!getText.animated) return
+    const animated = getText.animated.split("")
+    const $span = document.createElement("span")
 
-      },this.speedText)
-    }else{
-      this.stop()
+    if(getText.beginLine) {
+      const beginLine = document.createTextNode(getText.beginLine)
+      $span.appendChild(beginLine)
+    }
+
+    this.sto = setInterval(()=>{
+      const letter = document.createTextNode(animated[this.turn])
+      $span.appendChild(letter)
+      this.$wrapper.appendChild($span)
+      
+      this.turn++
+      if(this.turn == animated.length){
+        this.handleNewLine()
+      }
+    },this.speedText)
+  }
+  getLine(){
+    const actualLine = this.lines[this.indexLine]
+    if(typeof actualLine === "undefined"){
+      return false
+    }else if(typeof actualLine === "string" || typeof actualLine.animated === "string"){
+      return actualLine.animated ? actualLine : { animated: actualLine }
     }
   }
-  newLine(){
+  handleNewLine(){
     clearInterval(this.sto)
     this.turn = 0
     this.indexLine++
-    this.start()
+    this.animateLine()
   }
   stop(){
     clearInterval(this.sto)
