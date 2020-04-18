@@ -1,3 +1,5 @@
+(()=>{ // INIT ANONYMOUS FUNCION
+
 /* ---- EFFECTS --- */
 
 /* INIT BUTTON SMOOTH SCROLL */
@@ -59,18 +61,19 @@ setTimeout(()=>{
 
 /* INIT TERMINAL EFFECT */
 // http://vanilla-js.com/
-const $terminal = document.getElementById("terminal")
-const programmerLines = [
-  {
-    beginLine: "CP-CV:~ ",
-    animated: "node programmer",
-  },
-  "- CSS: 9/10",
-  "- Javascript: 8/10",
-  "- React: 7.5/10",
-  "- PHP: 7/10",
-  "- Python: 6/10",
-]
+
+// valueExample = [
+//   {
+//     beginLine: "begin line",
+//     animated: "animated",
+//     isLink: false,
+//     url: "https://google.com",
+//     clear: false
+//   },
+//   "simple line",
+// ]
+
+const $terminal = document.getElementById("lines")
 
 class TerminalEffect {
   constructor(params){
@@ -85,24 +88,29 @@ class TerminalEffect {
   }
   animateLine(){
     const getText = this.getLine()
-    if(!getText.animated) return
-    const animated = getText.animated.split("")
-    const $span = document.createElement("span")
 
+    let $line
+    if(!getText || !getText.animated) return
+
+    if(getText.isLink){
+      $line = document.createElement("a")
+      $line.href = getText.url
+      $line.target = "_blank"
+    }else{
+      $line = document.createElement("span")
+    }
     if(getText.beginLine) {
-      const beginLine = document.createTextNode(getText.beginLine)
-      $span.appendChild(beginLine)
+      $line.innerText = getText.beginLine
     }
 
+    $line.classList.add("line")
+    const animated = getText.animated.split("")
+    this.$wrapper.appendChild($line)
+
     this.sto = setInterval(()=>{
-      const letter = document.createTextNode(animated[this.turn])
-      $span.appendChild(letter)
-      this.$wrapper.appendChild($span)
-      
+      $line.innerText = $line.innerText + animated[this.turn]
       this.turn++
-      if(this.turn == animated.length){
-        this.handleNewLine()
-      }
+      if(this.turn == animated.length) this.handleNewLine(getText.clear)
     },this.speedText)
   }
   getLine(){
@@ -113,26 +121,24 @@ class TerminalEffect {
       return actualLine.animated ? actualLine : { animated: actualLine }
     }
   }
-  handleNewLine(){
+  handleNewLine(isClear){
     clearInterval(this.sto)
     this.turn = 0
     this.indexLine++
-    this.animateLine()
+    setTimeout(()=>{
+      if(isClear) this.$wrapper.innerText = ""
+      this.animateLine()
+    },1)
   }
   stop(){
     clearInterval(this.sto)
-    this.turn = 0
   }
 }
-const AnyLine = new TerminalEffect({
-  lines: programmerLines, 
-  speedText: 120, 
-  wrapper: $terminal
-})
 
 /* END TERMINAL EFFECT */
 
 /* ---- EVENTS --- */
+
 /* INIT SCROLL EVENT */
 document.addEventListener("scroll",(e) => {
   /* INIT NAVBAR TRANSITION */
@@ -157,8 +163,154 @@ document.addEventListener("scroll",(e) => {
   const isAboutActive = $about.classList.contains(ACTIVECLASS)
 
   if(scrollTop > limitAbout && !isAboutActive){
+    // IT ONLY HAPPENS ONCE FROM HERE...
     $about.classList.add(ACTIVECLASS)
-    AnyLine.start()
+    Effect.start()
+    // ADD A "clear" LINE TO "terminalLines" OBJECT
+    setTimeout(()=>{
+      terminalLines["Programmer"].unshift(
+        {
+          beginLine: "CP-CV:~ ",
+          animated: "clear",
+          clear: true
+        }
+      )
+    },3000)
+    // TO HERE
   }
 })
 /* END SCROLL EVENT */
+
+/* INIT TERMINAL CLICK EVENT */
+const $terminalButtons = document.querySelectorAll(".terminal-button")
+const TERMINALNAME = "CP-CV:~ "
+const terminalLines = {
+  "Programmer": [
+    {
+      beginLine: TERMINALNAME,
+      animated: "programmer_skills",
+    },
+    " ",
+    "Skills",
+    " ",
+    "- CSS: 9/10",
+    "- Javascript: 8/10",
+    "- React: 7.5/10",
+    "- PHP: 7/10",
+    "- Python: 6/10",
+    " ",
+    "Tools",
+    " ",
+    "- Illustrator: 8/10",
+    "- Photoshop: 8/10"
+  ],
+  "videogames": [
+    {
+      beginLine: TERMINALNAME,
+      animated: "clear",
+      clear: true
+    },
+    {
+      beginLine: TERMINALNAME,
+      animated: "gamer_profiles",
+    },
+    " ",
+    {
+      animated: "League of legends",
+      isLink: true,
+      url: "https://lan.op.gg/summoner/userName=R%C3%A1gnaros"
+    },
+    {
+      animated: "Teamfight Tactics",
+      isLink: true,
+      url: "https://lolchess.gg/profile/lan/r%C3%A1gnaros"
+    },
+    {
+      animated: "Overwatch",
+      isLink: true,
+      url: "https://www.overbuff.com/players/pc/Blackbeard-11273"
+    },
+    {
+      animated: "CSGO",
+      isLink: true,
+      url: "https://csgorankings.com/profile/76561198140295691"
+    }
+  ],
+  "metal": [
+    {
+      beginLine: TERMINALNAME,
+      animated: "clear",
+      clear: true
+    },
+    {
+      beginLine: TERMINALNAME,
+      animated: "spotify_playlists",
+    },
+    " ",
+    {
+      animated: "ᕙ(⇀‸↼‶)ᕗ <= Main playlist",
+      isLink: true,
+      url: "https://open.spotify.com/playlist/3aH2AWZTGslk1qkNNRBa72"
+    },
+    " ",
+    "Other genres",
+    " ",
+    {
+      animated: "(づ｡◕ _ ◕｡)づ <= Rock & Pop",
+      isLink: true,
+      url: "https://open.spotify.com/playlist/7yXEtoCySa2eyhZyMBPSAa"
+    },
+    {
+      animated: "☆(◒‿◒)☆ <= Latin Music",
+      isLink: true,
+      url: "https://open.spotify.com/playlist/6dxjMypjN0ZKisnUymGE7h"
+    },
+    " ",
+    {
+      animated: "Spotify profile",
+      isLink: true,
+      url: "https://open.spotify.com/user/12174964187?si=l2TUQomxQp--Zno6xDUTTQ"
+    }
+  ]
+}
+
+const speedText = 60
+
+let Effect = new TerminalEffect({
+  lines: terminalLines["Programmer"], 
+  speedText: speedText, 
+  wrapper: $terminal
+})
+
+$terminalButtons.forEach((e)=>{
+  e.addEventListener("click", (e)=>{
+    const dataLines = e.target.innerText
+    Effect.stop()
+    Effect = new TerminalEffect({
+      lines: terminalLines[dataLines],
+      speedText: speedText, 
+      wrapper: $terminal
+    })
+    Effect.start()
+  })
+})
+/* END TERMINAL CLICK EVENT */
+
+/* INIT SNIPPET CLICK EVENT */
+
+const $tabs = document.querySelectorAll("#snippets .tabs .tab")
+const $snippets = document.querySelectorAll("#snippets .wrapper .snippet")
+
+$tabs.forEach((e,i)=>{
+  e.addEventListener("click", (e)=>{
+    document.querySelector("#snippets .tabs .tab.active").classList.remove("active")
+    document.querySelector("#snippets .wrapper .snippet.active").classList.remove("active")
+
+    e.target.classList.add("active")
+    $snippets[i].classList.add("active")
+  })
+})
+
+/* END SNIPPET CLICK EVENT */
+
+})() // END ANONYMOUS FUNCION

@@ -56,18 +56,27 @@ body.home
           +prefix(transition-delay, 1s, webkit ms)
           opacity: 1
   section.about
-    padding-top: 5vh
+    height: 85vh
+    padding: 5vh 0
+    z-index: 1
     &:after
       content: ""
       width: 70%
-      height: 100%
+      height: 90%
       background-color: $gray 
       position: absolute
-      top: 0
+      top: 5%
       right: 0
       z-index: -1
-    .title
-      margin-bottom: 6vh
+    .container
+      position: absolute
+      top: 50%
+      left: 50%
+      +prefix(transform, translate(-50%,-50%), webkit ms)
+    .content-text, .terminal
+      max-width: calc(50% - 10px)
+    .content-text
+      float: left
     .terminal
       width: 500px
       height: 300px
@@ -75,19 +84,48 @@ body.home
       border-radius: 10px
       box-shadow: 0 0 18px 5px rgba(black, 0.5)
       background-color: black
-      margin: 0 auto
-      margin-right: 0
-      padding: 8px
+      padding: 20px 8px 8px
       overflow: hidden
-      span
+      position: absolute
+      top: calc(50% - 150px) 
+      right: 0
+      &:before
+        content: ""
+        position: absolute
+        top: 18px
+        left: 7px
+        width: calc(100% - 14px)
+        height: 1px
+        background-color: #0c0c0c
+      .circle
+        position: absolute
+        top: 6px
+        width: 9px
+        height: 9px
+        border-radius: 50%
+        &.circle-1
+          left: 7px
+          background-color: #c24b47
+        &.circle-2
+          left: 20px
+          background-color: #b59c1d
+        &.circle-3
+          left: 33px
+          background-color: #419b22
+      a.line
+        text-decoration: underline
+        &:hover
+          color: $hoverLink
+      .line
         display: table
-        color: $altColor
+        color: lighten(#f7e018, 10%)
         font-family: 'Anonymous Pro', monospace
         font-size: 14px
+        height: 12px
         &:last-child
           &:after
             content: "_"
-            color: $altColor
+            color: $yellow
             +keyframes(intermittent)
               from
                 opacity: 1
@@ -95,21 +133,77 @@ body.home
                 opacity: 0
             +prefix(animation, intermittent 0.8s linear infinite)
   section.snippets
-    padding: 200px 0
+    height: 85vh
+    padding: 5vh 0
     &:after
       content: ""
-      width: 90%
-      height: calc(100% - 400px)
+      width: 97%
+      height: 55vh
       background-color: $gray 
       position: absolute
       bottom: 0
       left: 0
       z-index: -1
+    .tabs
+      width: calc(45% - 15px)
+      position: absolute
+      height: 100%
+      padding-top: 10vh
+      color: white
+      padding-left: 4vw
+      .tab
+        font-family: monument_extendedregular
+        letter-spacing: 3px
+        line-height: 1.6
+        cursor: pointer
+        display: table
+        +prefix(transition, all ease-in-out 0.3s, webkit ms)
+        &:before
+          content: ""
+          position: absolute
+          width: 0
+          height: 3px
+          top: 50%
+          left: -4vw
+          background-color: $yellow
+          +prefix(transition, all ease-in-out 0.3s, webkit ms)
+        &:hover
+          color: lighten($yellow, 15%)
+        &.active
+          padding-left: 3vw
+          color: $yellow
+          cursor: initial
+          &:before
+            opacity: 1
+            width: 6vw
+      .description
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 90%
+        font-family: space_groteskregular
+        font-size: 14px
+        line-height: 1.33
+        letter-spacing: 2px
     .wrapper
-      padding-top: 50px
+      float: right
+      width: calc(55% - 15px)
+      height: 50vh
     .snippet
-      width: 50%
-      float: left
+      position: absolute
+      width: 100%
+      height: 100%
+      opacity: 0
+      visibility: hidden
+      top: 0
+      +prefix(transition, all ease-in-out 0.3s, webkit ms)
+      &.active
+        opacity: 1
+        visibility: visible
+      .cp_embed_wrapper
+        height: 100%
+        iframe
+          height: 100%
   section.contact
     margin-top: 150px
     .title

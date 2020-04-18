@@ -4,7 +4,7 @@
   // solo para que el plugin blotter.js encuentre la fuente que quiero para el efecto
 
 .container
-  width: 85%
+  width: 92%
   max-width: 1100px
   margin: 0 auto
 
@@ -36,11 +36,12 @@ $sidebarW: 100px
     position: absolute
     top: 0
     left: 0
-    background-color: $altColor
+    background-color: $yellow
     width: 100%
     height: 25%
 
 .title
+  margin-bottom: 6vh
   color: white
   font-family: monument_extendedultrabold
   font-size: 70px
@@ -50,7 +51,7 @@ $sidebarW: 100px
     content: ""
     width: 120px
     height: 3px
-    background-color: $altColor
+    background-color: $yellow
     position: absolute
     bottom: 6px
     left: -18px
@@ -70,15 +71,21 @@ $sidebarW: 100px
     strong
       left: 0
 
-.content-text
+.paragraph-text
   max-width: 650px
-  margin: 20px 0 0 5vw
+  margin-bottom: 20px
   z-index: 1
 
 .regular-text
   font-family: space_groteskregular
-  font-size: 17px
+  font-size: 16px
   font-weight: 300
   line-height: 1.4
   letter-spacing: 3px
   color: #ffffff
+  a
+    color: lighten($yellow, 40%)
+    cursor: pointer
+    display: inline
+    &:hover
+      color: lighten($hoverLink, 40%)
