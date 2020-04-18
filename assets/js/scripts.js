@@ -1,10 +1,13 @@
 (()=>{ // INIT ANONYMOUS FUNCION
 
+const ACTIVECLASS = "active"
+const $about = document.getElementById("about")
+
 /* ---- EFFECTS --- */
 
 /* INIT BUTTON SMOOTH SCROLL */
 // https://github.com/cferdinandi/smooth-scroll
-const scroll = new SmoothScroll('a[href*="#"]', {
+new SmoothScroll('a[href*="#"]', {
   speed: 1500,
 	speedAsDuration: true
 })
@@ -40,10 +43,10 @@ setTimeout(()=>{
   const $greetings = document.querySelectorAll(".greetings")
   
   scope.appendTo($hello)
-  $hello.classList.add("active")
+  $hello.classList.add(ACTIVECLASS)
   
   $greetings.forEach(($e)=>{
-    $e.classList.add("active")
+    $e.classList.add(ACTIVECLASS)
   })
   document.addEventListener("mousemove",(e) => {
     const halfSize = {
@@ -123,10 +126,10 @@ class TerminalEffect {
   }
   handleNewLine(isClear){
     clearInterval(this.sto)
-    this.turn = 0
-    this.indexLine++
     setTimeout(()=>{
       if(isClear) this.$wrapper.innerText = ""
+      this.turn = 0
+      this.indexLine++
       this.animateLine()
     },1)
   }
@@ -157,26 +160,13 @@ document.addEventListener("scroll",(e) => {
   /* END NAVBAR TRANSITION */
 
   /* INIT TRIGGER TERMINAL EFFECT */
-  const $about = document.getElementById("about")
   const limitAbout = $about.offsetTop - (windowHeight/2)
-  const ACTIVECLASS = "active"
   const isAboutActive = $about.classList.contains(ACTIVECLASS)
 
   if(scrollTop > limitAbout && !isAboutActive){
     // IT ONLY HAPPENS ONCE FROM HERE...
     $about.classList.add(ACTIVECLASS)
     Effect.start()
-    // ADD A "clear" LINE TO "terminalLines" OBJECT
-    setTimeout(()=>{
-      terminalLines["Programmer"].unshift(
-        {
-          beginLine: "CP-CV:~ ",
-          animated: "clear",
-          clear: true
-        }
-      )
-    },3000)
-    // TO HERE
   }
 })
 /* END SCROLL EVENT */
@@ -188,12 +178,17 @@ const terminalLines = {
   "Programmer": [
     {
       beginLine: TERMINALNAME,
+      animated: "clear",
+      clear: true
+    },
+    {
+      beginLine: TERMINALNAME,
       animated: "programmer_skills",
     },
     " ",
     "Skills",
     " ",
-    "- CSS: 9/10",
+    "- SASS: 9/10",
     "- Javascript: 8/10",
     "- React: 7.5/10",
     "- PHP: 7/10",
@@ -202,7 +197,9 @@ const terminalLines = {
     "Tools",
     " ",
     "- Illustrator: 8/10",
-    "- Photoshop: 8/10"
+    "- Photoshop: 8/10",
+    "- XD: 7/10",
+    "- Sketch: 6/10"
   ],
   "videogames": [
     {
@@ -252,11 +249,8 @@ const terminalLines = {
       isLink: true,
       url: "https://open.spotify.com/playlist/3aH2AWZTGslk1qkNNRBa72"
     },
-    " ",
-    "Other genres",
-    " ",
     {
-      animated: "(づ｡◕ _ ◕｡)づ <= Rock & Pop",
+      animated: "(づ｡◕ _ ◕｡)づ <= Rock",
       isLink: true,
       url: "https://open.spotify.com/playlist/7yXEtoCySa2eyhZyMBPSAa"
     },
@@ -284,7 +278,8 @@ let Effect = new TerminalEffect({
 
 $terminalButtons.forEach((e)=>{
   e.addEventListener("click", (e)=>{
-    const dataLines = e.target.innerText
+    if(!$about.classList.contains(ACTIVECLASS)) return
+    const dataLines = e.target.innerText 
     Effect.stop()
     Effect = new TerminalEffect({
       lines: terminalLines[dataLines],
@@ -292,6 +287,7 @@ $terminalButtons.forEach((e)=>{
       wrapper: $terminal
     })
     Effect.start()
+    gtag('event', 'acc', {'event_category': 'cat', 'event_label': 'etiq', 'value': 'val'});
   })
 })
 /* END TERMINAL CLICK EVENT */
@@ -303,11 +299,11 @@ const $snippets = document.querySelectorAll("#snippets .wrapper .snippet")
 
 $tabs.forEach((e,i)=>{
   e.addEventListener("click", (e)=>{
-    document.querySelector("#snippets .tabs .tab.active").classList.remove("active")
-    document.querySelector("#snippets .wrapper .snippet.active").classList.remove("active")
+    document.querySelector(`#snippets .tabs .tab.${ACTIVECLASS}`).classList.remove(ACTIVECLASS)
+    document.querySelector(`#snippets .wrapper .snippet.${ACTIVECLASS}`).classList.remove(ACTIVECLASS)
 
-    e.target.classList.add("active")
-    $snippets[i].classList.add("active")
+    e.target.classList.add(ACTIVECLASS)
+    $snippets[i].classList.add(ACTIVECLASS)
   })
 })
 
