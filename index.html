@@ -87,19 +87,17 @@
 		<section class="contact" id="contact">
 			<div class="container">
 				<h2 class="title right">CONTACT<strong>ACT</strong></h2> 
-				<p class="paragraph-text regular-text">If you want say hello or want to begin a tech project with me, let me know using the contact form.</p>
-				<form
-					action="https://formspree.io/mjvebyko"
-					method="POST">
-					<label>
-						Your email:
-						<input type="text" name="_replyto">
-					</label>
-					<label>
-						Your message:
-						<textarea name="message"></textarea>
-					</label>
-					<button type="submit">Send</button>
+				<p class="paragraph-text regular-text">If you want say hello or want to begin a tech project with me, let me know using this contact form.</p>
+				<form action="https://formspree.io/mjvebyko" method="POST" >
+					<div class="input">
+						<label for="email">Your email:</label>
+						<input type="email" id="email" name="_replyto" required>
+					</div>
+					<div class="input">
+						<label for="message">Your message:</label>
+						<textarea placeholder="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, porro veritatis consequatur nostrum quasi harum ducimus eligendi aspernatur nihil qui.d" maxlength="140" name="message" id="message" required></textarea>
+					</div>
+					<button type="submit" class="submit"><img src="assets/img/plane.svg" alt="send"></button>
 				</form>
 			</div>
 		</section>

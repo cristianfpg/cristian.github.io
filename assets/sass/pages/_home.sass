@@ -26,7 +26,7 @@ body.home
     .main-title
       position: absolute
       top: 50%
-      width: 90%
+      // width: 90%
       left: 0
       +prefix(transform, translateY(-50%), webkit ms)
       > *
@@ -36,6 +36,9 @@ body.home
         +prefix(transition, opacity ease-in-out 1s, webkit ms)
         &.active
           opacity: 1
+        canvas
+          max-width: 100%
+          height: auto !important
       .second
         font-family: monument_extendedregular
         font-size: 40px
@@ -57,15 +60,14 @@ body.home
           opacity: 1
   section.about
     height: 85vh
-    padding: 5vh 0
     z-index: 1
     &:after
       content: ""
       width: 70%
-      height: 90%
+      height: 100%
       background-color: $gray 
       position: absolute
-      top: 5%
+      top: 0
       right: 0
       z-index: -1
     .container
@@ -133,19 +135,19 @@ body.home
                 opacity: 0
             +prefix(animation, intermittent 0.8s linear infinite)
   section.snippets
-    height: 85vh
-    padding: 5vh 0
+    height: 95vh
+    padding-top: 20vh
     &:after
       content: ""
       width: 97%
-      height: 55vh
+      height: 50vh
       background-color: $gray 
       position: absolute
       bottom: 0
       left: 0
       z-index: -1
     .tabs
-      width: calc(45% - 15px)
+      width: calc(40% - 15px)
       position: absolute
       height: 100%
       padding-top: 10vh
@@ -187,7 +189,7 @@ body.home
         letter-spacing: 2px
     .wrapper
       float: right
-      width: calc(55% - 15px)
+      width: calc(60% - 15px)
       height: 50vh
     .snippet
       position: absolute
@@ -206,5 +208,48 @@ body.home
           height: 100%
   section.contact
     margin-top: 150px
+    padding-bottom: 10vh
     .title
       margin-bottom: 60px
+    form
+      max-width: 350px
+      margin-top: 40px
+      .input
+        margin-top: 30px
+      label, input, textarea
+        display: block
+        width: 100%
+        color: #b8a988
+        font-family: space_groteskregular
+      label
+        color: $yellow
+        font-size: 14px
+      input, textarea
+        font-size: 17px
+        border: none
+        border-bottom: 1px solid $yellow
+        background: transparent
+        padding: 10px 0
+        margin-top: 10px
+      textarea
+        resize: none
+        height: 100px
+        overflow: hidden
+      .submit
+        margin-top: 20px
+        color: $yellow
+        font-family: space_groteskregular
+        border: 1px solid rgba($yellow, 0.1)
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        padding: 5px
+        +prefix(transition, all ease-in-out 0.2s, webkit ms)
+        img
+          width: 25px
+          height: auto
+          +prefix(filter, invert(1), webkit ms)
+        &:hover
+          border: 1px solid rgba($yellow, 1)
+
+        

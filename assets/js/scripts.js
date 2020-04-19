@@ -299,11 +299,16 @@ const $snippets = document.querySelectorAll("#snippets .wrapper .snippet")
 
 $tabs.forEach((e,i)=>{
   e.addEventListener("click", (e)=>{
+    const $description = document.querySelector("#snippets .tabs .description")
+    const activeTab = e.target
+    
     document.querySelector(`#snippets .tabs .tab.${ACTIVECLASS}`).classList.remove(ACTIVECLASS)
     document.querySelector(`#snippets .wrapper .snippet.${ACTIVECLASS}`).classList.remove(ACTIVECLASS)
 
-    e.target.classList.add(ACTIVECLASS)
+    activeTab.classList.add(ACTIVECLASS)
     $snippets[i].classList.add(ACTIVECLASS)
+    $description.innerText = activeTab.dataset.description
+
   })
 })
 
