@@ -8,8 +8,9 @@ const $about = document.getElementById("about")
 /* INIT BUTTON SMOOTH SCROLL */
 // https://github.com/cferdinandi/smooth-scroll
 new SmoothScroll('a[href*="#"]', {
-  speed: 1500,
-	speedAsDuration: true
+  speed: 1000,
+  speedAsDuration: true,
+  updateURL: false
 })
 /* END BUTTON SMOOTH SCROLL */
 
@@ -49,6 +50,7 @@ setTimeout(()=>{
     $e.classList.add(ACTIVECLASS)
   })
   document.addEventListener("mousemove",(e) => {
+    if(window.innerWidth <= 768) return
     const halfSize = {
       w: window.innerWidth/2,
       h: window.innerHeight/2
@@ -287,7 +289,7 @@ $terminalButtons.forEach((e)=>{
       wrapper: $terminal
     })
     Effect.start()
-    gtag('event', 'acc', {'event_category': 'cat', 'event_label': 'etiq', 'value': 'val'});
+    gtag('event', 'btntrack', {'event_category': 'terminalbtn', 'event_label': dataLines});
   })
 })
 /* END TERMINAL CLICK EVENT */
@@ -299,7 +301,7 @@ const $snippets = document.querySelectorAll("#snippets .wrapper .snippet")
 
 $tabs.forEach((e,i)=>{
   e.addEventListener("click", (e)=>{
-    const $description = document.querySelector("#snippets .tabs .description")
+    const $description = document.querySelector("#snippets .description")
     const activeTab = e.target
     
     document.querySelector(`#snippets .tabs .tab.${ACTIVECLASS}`).classList.remove(ACTIVECLASS)

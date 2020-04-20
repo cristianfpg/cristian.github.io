@@ -1,7 +1,66 @@
+section.topbar
+  padding: 50px 40px
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  z-index: 1
+  .logo
+    font-family: space_groteskbold
+    font-size: 20px
+    letter-spacing: 8px
+    color: #ffffff
+    display: inline-block
+    line-height: 1.1
+  @media screen and (max-width: 768px)
+    padding: 12px
+    .logo
+      font-size: 16px
+      letter-spacing: 6px
+      span
+        text-align: justify
+        display: table
+nav.navbar
+  float: right
+  a
+    text-align: right
+    margin-left: 40px
+    +prefix(transition, all ease-in-out 0.4s, webkit ms)
+    svg
+      display: none
+      width: 32px
+    &.codepen
+      path, polygon
+        fill: #898989
+      &:hover
+        color: #898989
+    &.linkedin
+      path, polygon
+        fill: #509bf8
+      &:hover
+        color: #509bf8
+    &.github
+      path, polygon
+        fill: $hoverLink
+      &:hover
+        color: $hoverLink
+    &.contact
+      path, polygon
+        fill: $yellow
+      &:hover
+        color: $yellow
+  @media screen and (max-width: 1024px)
+    a
+      margin-left: 4px
+      span
+        display: none
+      svg
+        display: inline-block
+
+          
 .dot
   font-family: monument_extendedultrabold
-  font-size: 11px
-  // solo para que el plugin blotter.js encuentre la fuente que quiero para el efecto
+  // REQUIREMENT FOR BLOTTER PLUGGIN TO FIND THE MAIN FONT
 
 .container
   width: 92%
@@ -13,16 +72,23 @@
   display: table
   clear: both
 
-$sidebarW: 100px
+
 .main
-  width: calc(100% - $sidebarW)
-  margin-left: $sidebarW
+  width: calc(100% - 100px)
+  margin-left: 100px
+  @media screen and (max-width: 768px)
+    width: 100%
+    margin-left: 0
 
 .sidebar
-  width: $sidebarW
+  width: 100px
   height: 100%
   position: fixed
   background-color: $gray
+  top: 0
+  left: 0
+  @media screen and (max-width: 768px)
+    display: none
 
 .scrollbar
   position: absolute
@@ -39,6 +105,11 @@ $sidebarW: 100px
     background-color: $yellow
     width: 100%
     height: 25%
+  @media screen and (max-width: 768px)
+    top: 0
+    left: 0
+    height: 100%
+    +prefix(transform, translate(0, 0), webkit ms)
 
 .title
   margin-bottom: 6vh
@@ -70,6 +141,19 @@ $sidebarW: 100px
     padding-left: 13px
     strong
       left: 0
+  @media screen and (max-width: 768px)
+    font-size: 35px
+    &:after
+      height: 1px
+      left: -7px
+    strong
+      font-size: 34px
+      -webkit-text-stroke-width: 1px
+    &.right
+      strong
+        right: -3px
+    &.left
+      padding-left: 3px
 
 .paragraph-text
   max-width: 570px
@@ -84,8 +168,10 @@ $sidebarW: 100px
   letter-spacing: 3px
   color: #ffffff
   a
-    color: lighten($yellow, 40%)
+    color: lighten($yellow, 45%)
     cursor: pointer
     display: inline
     &:hover
-      color: lighten($hoverLink, 40%)
+      color: lighten($hoverLink, 45%)
+  @media screen and (max-width: 768px)
+    font-size: 14px

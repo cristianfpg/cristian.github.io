@@ -1,28 +1,12 @@
 body.home
-  section.topbar
-    padding: 50px 40px
-    position: absolute
-    width: 100%
-    top: 0
-    left: 0
-    z-index: 1
-    .logo
-      font-family: space_groteskbold
-      font-size: 20px
-      letter-spacing: 10px
-      color: #ffffff
-      display: inline-block
-    .navbar
-      float: right
-      a
-        text-align: right
-        margin-left: 40px
   section.hero
     height: 95vh
     .me
       position: absolute
       top: 0 
       right: 0
+      pointer-events: none
+      opacity: 0.8
     .main-title
       position: absolute
       top: 50%
@@ -178,15 +162,17 @@ body.home
           &:before
             opacity: 1
             width: 6vw
-      .description
-        position: absolute
-        bottom: 0
-        left: 0
-        width: 90%
-        font-family: space_groteskregular
-        font-size: 14px
-        line-height: 1.33
-        letter-spacing: 2px
+    .description
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 90%
+      font-family: space_groteskregular
+      font-size: 14px
+      line-height: 1.33
+      letter-spacing: 2px
+      color: white
+      width: calc(40% - 15px)
     .wrapper
       float: right
       width: calc(60% - 15px)
@@ -209,6 +195,14 @@ body.home
   section.contact
     margin-top: 150px
     padding-bottom: 10vh
+    &:after
+      content: ""
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 50%
+      height: 50%
+      background-color: $gray 
     .title
       margin-bottom: 60px
     form
@@ -251,5 +245,74 @@ body.home
           +prefix(filter, invert(1), webkit ms)
         &:hover
           border: 1px solid rgba($yellow, 1)
-
-        
+  @media screen and (max-width: 1024px)
+    section.hero
+      height: 85vh
+    section.about 
+      .terminal
+        top: auto
+        bottom: 0
+  @media screen and (max-width: 768px)
+    section.about 
+      height: auto
+      padding: 12vh 0
+      .content-text, .terminal
+        max-width: 100%
+      .terminal
+        position: relative
+      .container
+        position: relative
+        top: 0
+        left: 0
+        +prefix(transform, translate(0,0), webkit ms)
+    section.snippets
+      padding: 12vh 0
+      height: auto
+      .tabs
+        width: 100%
+        position: relative
+        white-space: nowrap
+        padding-left: 0
+        overflow: auto
+        padding: 15px 0
+        .tab
+          display: inline-block
+          font-size: 14px
+          &:not(:first-child)
+            margin-left: 8vw
+          &.active
+            padding-left: 0
+            text-decoration: underline
+            &:before
+              display: none
+      .description
+        position: relative
+        width: 100%
+        padding: 35px 0
+        height: 140px
+        &:before
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 1px
+          background: rgb(199,155,59)
+          background: linear-gradient(90deg, rgba(199,155,59,1) 0%, rgba(199,155,59,0) 100%)
+          opacity: 0.5
+        &:after
+          content: ""
+          position: absolute
+          top: -70px
+          right: 0
+          width: 25vw
+          height: 70px
+          background: rgb(0,0,0)
+          background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)
+          pointer-events: none
+      .wrapper
+        width: 100%
+    section.contact
+      margin-top: 15vh
+      &:after
+        z-index: -1
