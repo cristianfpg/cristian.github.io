@@ -1,26 +1,28 @@
-section.topbar
+.logo
+  font-family: space_groteskbold
+  font-size: 20px
+  letter-spacing: 8px
+  color: #ffffff
+  display: inline-block
+  line-height: 1.1
+  @media screen and (max-width: 768px)
+    font-size: 16px
+    letter-spacing: 6px
+    span
+      text-align: justify
+      display: table
+
+.topbar
   padding: 50px 40px
   position: absolute
   width: 100%
   top: 0
   left: 0
   z-index: 1
-  .logo
-    font-family: space_groteskbold
-    font-size: 20px
-    letter-spacing: 8px
-    color: #ffffff
-    display: inline-block
-    line-height: 1.1
   @media screen and (max-width: 768px)
     padding: 12px
-    .logo
-      font-size: 16px
-      letter-spacing: 6px
-      span
-        text-align: justify
-        display: table
-nav.navbar
+
+.navbar
   float: right
   a
     text-align: right
@@ -87,6 +89,7 @@ nav.navbar
   background-color: $gray
   top: 0
   left: 0
+  z-index: 1
   @media screen and (max-width: 768px)
     display: none
 
@@ -175,3 +178,33 @@ nav.navbar
       color: lighten($hoverLink, 45%)
   @media screen and (max-width: 768px)
     font-size: 14px
+
+footer
+  background: $gray
+  padding: 85px 10px
+  color: white
+  text-align: center
+  .year
+    color: $yellow
+    font-size: 20px
+  .navbar
+    float: none
+    margin-top: 30px
+    &:before
+      content: ""
+      width: 60px
+      height: 1px
+      margin: 0 auto 30px
+      display: table
+      position: relative
+      background-color: $yellow
+    a
+      margin: 0 20px
+  @media screen and (max-width: 1024px)
+    .navbar
+      a
+        margin: 0 2px
+  @media screen and (max-width: 768px)
+    padding: 50px 10px
+    .year
+      font-size: 16px

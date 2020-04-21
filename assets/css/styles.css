@@ -81,15 +81,7 @@ body img {
   font-weight: normal;
   font-style: normal;
 }
-section.topbar {
-  padding: 50px 40px;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-section.topbar .logo {
+.logo {
   font-family: space_groteskbold;
   font-size: 20px;
   letter-spacing: 8px;
@@ -98,65 +90,76 @@ section.topbar .logo {
   line-height: 1.1;
 }
 @media screen and (max-width: 768px) {
-  section.topbar {
-    padding: 12px;
-  }
-  section.topbar .logo {
+  .logo {
     font-size: 16px;
     letter-spacing: 6px;
   }
-  section.topbar .logo span {
+  .logo span {
     text-align: justify;
     display: table;
   }
 }
 
-nav.navbar {
+.topbar {
+  padding: 50px 40px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+@media screen and (max-width: 768px) {
+  .topbar {
+    padding: 12px;
+  }
+}
+
+.navbar {
   float: right;
 }
-nav.navbar a {
+.navbar a {
   text-align: right;
   margin-left: 40px;
   -webkit-transition: all ease-in-out 0.4s;
   -ms-transition: all ease-in-out 0.4s;
   transition: all ease-in-out 0.4s;
 }
-nav.navbar a svg {
+.navbar a svg {
   display: none;
   width: 32px;
 }
-nav.navbar a.codepen path, nav.navbar a.codepen polygon {
+.navbar a.codepen path, .navbar a.codepen polygon {
   fill: #898989;
 }
-nav.navbar a.codepen:hover {
+.navbar a.codepen:hover {
   color: #898989;
 }
-nav.navbar a.linkedin path, nav.navbar a.linkedin polygon {
+.navbar a.linkedin path, .navbar a.linkedin polygon {
   fill: #509bf8;
 }
-nav.navbar a.linkedin:hover {
+.navbar a.linkedin:hover {
   color: #509bf8;
 }
-nav.navbar a.github path, nav.navbar a.github polygon {
+.navbar a.github path, .navbar a.github polygon {
   fill: #2bc4dc;
 }
-nav.navbar a.github:hover {
+.navbar a.github:hover {
   color: #2bc4dc;
 }
-nav.navbar a.contact path, nav.navbar a.contact polygon {
+.navbar a.contact path, .navbar a.contact polygon {
   fill: #c79b3b;
 }
-nav.navbar a.contact:hover {
+.navbar a.contact:hover {
   color: #c79b3b;
 }
 @media screen and (max-width: 1024px) {
-  nav.navbar a {
+  .navbar a {
     margin-left: 4px;
   }
-  nav.navbar a span {
+  .navbar a span {
     display: none;
   }
-  nav.navbar a svg {
+  .navbar a svg {
     display: inline-block;
   }
 }
@@ -195,6 +198,7 @@ nav.navbar a.contact:hover {
   background-color: #0c0c0c;
   top: 0;
   left: 0;
+  z-index: 1;
 }
 @media screen and (max-width: 768px) {
   .sidebar {
@@ -312,6 +316,46 @@ nav.navbar a.contact:hover {
 @media screen and (max-width: 768px) {
   .regular-text {
     font-size: 14px;
+  }
+}
+
+footer {
+  background: #0c0c0c;
+  padding: 85px 10px;
+  color: white;
+  text-align: center;
+}
+footer .year {
+  color: #c79b3b;
+  font-size: 20px;
+}
+footer .navbar {
+  float: none;
+  margin-top: 30px;
+}
+footer .navbar:before {
+  content: "";
+  width: 60px;
+  height: 1px;
+  margin: 0 auto 30px;
+  display: table;
+  position: relative;
+  background-color: #c79b3b;
+}
+footer .navbar a {
+  margin: 0 20px;
+}
+@media screen and (max-width: 1024px) {
+  footer .navbar a {
+    margin: 0 2px;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 50px 10px;
+  }
+  footer .year {
+    font-size: 16px;
   }
 }
 
@@ -591,7 +635,7 @@ body.home section.snippets .snippet .cp_embed_wrapper iframe {
 }
 body.home section.contact {
   margin-top: 150px;
-  padding-bottom: 10vh;
+  padding-bottom: 23vh;
 }
 body.home section.contact:after {
   content: "";
@@ -746,6 +790,7 @@ body.home section.contact form .submit:hover {
   }
   body.home section.contact {
     margin-top: 15vh;
+    padding-bottom: 10vh;
   }
   body.home section.contact form .submit {
     margin-top: 40px;
