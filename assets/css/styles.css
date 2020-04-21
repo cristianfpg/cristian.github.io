@@ -167,7 +167,7 @@ nav.navbar a.contact:hover {
 
 .container {
   width: 92%;
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -619,7 +619,7 @@ body.home section.contact form label, body.home section.contact form input, body
   font-family: space_groteskregular;
 }
 body.home section.contact form label {
-  color: #c79b3b;
+  color: white;
   font-size: 14px;
 }
 body.home section.contact form input, body.home section.contact form textarea {
@@ -637,9 +637,8 @@ body.home section.contact form textarea {
 }
 body.home section.contact form .submit {
   margin-top: 20px;
-  color: #c79b3b;
+  background-color: #c79b3b;
   font-family: space_groteskregular;
-  border: 1px solid rgba(199, 155, 59, 0.1);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -648,15 +647,16 @@ body.home section.contact form .submit {
   -ms-transition: all ease-in-out 0.2s;
   transition: all ease-in-out 0.2s;
 }
-body.home section.contact form .submit img {
+body.home section.contact form .submit svg {
   width: 25px;
   height: auto;
-  -webkit-filter: invert(1);
-  -ms-filter: invert(1);
-  filter: invert(1);
+  margin: 7px 7px 7px 9px;
+}
+body.home section.contact form .submit svg path {
+  fill: black;
 }
 body.home section.contact form .submit:hover {
-  border: 1px solid #c79b3b;
+  background-color: #523f17;
 }
 @media screen and (max-width: 1024px) {
   body.home section.hero {
@@ -742,9 +742,13 @@ body.home section.contact form .submit:hover {
   }
   body.home section.snippets .wrapper {
     width: 100%;
+    height: 40vh;
   }
   body.home section.contact {
     margin-top: 15vh;
+  }
+  body.home section.contact form .submit {
+    margin-top: 40px;
   }
   body.home section.contact:after {
     z-index: -1;
