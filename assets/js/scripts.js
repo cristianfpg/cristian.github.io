@@ -274,7 +274,7 @@ const terminalLines = {
   ]
 }
 
-const speedText = 50
+const speedText = 30
 
 let Effect = new TerminalEffect({
   lines: terminalLines["Programmer"], 
