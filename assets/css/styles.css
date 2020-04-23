@@ -106,7 +106,7 @@ body img {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
 }
 @media screen and (max-width: 768px) {
   .topbar {
@@ -499,8 +499,9 @@ body.home section.about .terminal .line {
   display: table;
   color: #f9e749;
   font-family: "Anonymous Pro", monospace;
-  font-size: 14px;
+  font-size: 13px;
   height: 12px;
+  line-height: 0.95;
 }
 body.home section.about .terminal .line:last-child:after {
   content: "_";
@@ -540,33 +541,22 @@ body.home section.about .terminal .line:last-child:after {
   }
 }
 body.home section.snippets {
-  height: 95vh;
+  min-height: 95vh;
   padding-top: 20vh;
-}
-body.home section.snippets:after {
-  content: "";
-  width: 97%;
-  height: 50vh;
-  background-color: #0c0c0c;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
 }
 body.home section.snippets .tabs {
   width: calc(40% - 15px);
-  position: absolute;
-  height: 100%;
-  padding-top: 10vh;
+  padding: 0 0 12vh 4vw;
   color: white;
-  padding-left: 4vw;
 }
 body.home section.snippets .tabs .tab {
   font-family: monument_extendedregular;
   letter-spacing: 3px;
-  line-height: 1.6;
+  line-height: 1.2;
   cursor: pointer;
   display: table;
+  font-size: 15px;
+  margin-bottom: 14px;
   -webkit-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
@@ -587,30 +577,35 @@ body.home section.snippets .tabs .tab:hover {
   color: #d8b977;
 }
 body.home section.snippets .tabs .tab.active {
-  padding-left: 3vw;
+  padding-left: 1vw;
   color: #c79b3b;
   cursor: initial;
 }
 body.home section.snippets .tabs .tab.active:before {
   opacity: 1;
-  width: 6vw;
+  width: 4vw;
 }
 body.home section.snippets .description {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 90%;
   font-family: space_groteskregular;
-  font-size: 14px;
-  line-height: 1.33;
-  letter-spacing: 2px;
+  font-size: 13px;
+  line-height: 1.2;
+  letter-spacing: 1px;
   color: white;
-  width: calc(40% - 15px);
+  width: calc(50% - 20px);
+}
+body.home section.snippets .description .url {
+  color: #c79b3b;
+  display: table;
+  margin-top: 5px;
 }
 body.home section.snippets .wrapper {
-  float: right;
-  width: calc(60% - 15px);
-  height: 50vh;
+  width: calc(50% - 10px);
+  max-width: 500px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 body.home section.snippets .snippet {
   position: absolute;
@@ -619,6 +614,9 @@ body.home section.snippets .snippet {
   opacity: 0;
   visibility: hidden;
   top: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   -webkit-transition: all ease-in-out 0.3s;
   -ms-transition: all ease-in-out 0.3s;
   transition: all ease-in-out 0.3s;
@@ -632,6 +630,16 @@ body.home section.snippets .snippet .cp_embed_wrapper {
 }
 body.home section.snippets .snippet .cp_embed_wrapper iframe {
   height: 100%;
+}
+body.home section.snippets .container.after-element:after {
+  content: "";
+  width: 110%;
+  height: 110%;
+  background-color: #0c0c0c;
+  position: absolute;
+  bottom: -5%;
+  left: -10%;
+  z-index: -1;
 }
 body.home section.contact {
   margin-top: 150px;
@@ -732,7 +740,14 @@ body.home section.contact form .submit:hover {
   }
   body.home section.snippets {
     padding: 12vh 0;
-    height: auto;
+  }
+  body.home section.snippets .tabs, body.home section.snippets .description, body.home section.snippets .wrapper {
+    width: 100%;
+  }
+  body.home section.snippets .wrapper {
+    height: 200px;
+    position: relative;
+    margin: 0 auto;
   }
   body.home section.snippets .tabs {
     width: 100%;
@@ -747,7 +762,7 @@ body.home section.contact form .submit:hover {
     font-size: 14px;
   }
   body.home section.snippets .tabs .tab:not(:first-child) {
-    margin-left: 8vw;
+    margin-left: 11vw;
   }
   body.home section.snippets .tabs .tab.active {
     padding-left: 0;
@@ -756,11 +771,13 @@ body.home section.contact form .submit:hover {
   body.home section.snippets .tabs .tab.active:before {
     display: none;
   }
+  body.home section.snippets .container.after-element:after {
+    height: 105%;
+  }
   body.home section.snippets .description {
-    position: relative;
     width: 100%;
     padding: 35px 0;
-    height: 140px;
+    min-height: 150px;
   }
   body.home section.snippets .description:before {
     content: "";
@@ -784,9 +801,11 @@ body.home section.contact form .submit:hover {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, black 100%);
     pointer-events: none;
   }
-  body.home section.snippets .wrapper {
-    width: 100%;
-    height: 40vh;
+  body.home section.snippets .description a {
+    margin: 10px 0;
+  }
+  body.home section.snippets .description a:hover {
+    color: #2bc4dc;
   }
   body.home section.contact {
     margin-top: 15vh;

@@ -1,1 +1,1 @@
-# [cristianpache.co](https://cristianpache.co) 🕹️
+# [cristianpache.co](https://cristianpache.co)

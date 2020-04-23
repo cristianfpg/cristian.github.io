@@ -105,8 +105,9 @@ body.home
         display: table
         color: lighten(#f7e018, 10%)
         font-family: 'Anonymous Pro', monospace
-        font-size: 14px
+        font-size: 13px
         height: 12px
+        line-height: 0.95
         &:last-child
           &:after
             content: "_"
@@ -118,30 +119,20 @@ body.home
                 opacity: 0
             +prefix(animation, intermittent 0.8s linear infinite)
   section.snippets
-    height: 95vh
+    min-height: 95vh
     padding-top: 20vh
-    &:after
-      content: ""
-      width: 97%
-      height: 50vh
-      background-color: $gray 
-      position: absolute
-      bottom: 0
-      left: 0
-      z-index: -1
     .tabs
       width: calc(40% - 15px)
-      position: absolute
-      height: 100%
-      padding-top: 10vh
+      padding: 0 0 12vh 4vw
       color: white
-      padding-left: 4vw
       .tab
         font-family: monument_extendedregular
         letter-spacing: 3px
-        line-height: 1.6
+        line-height: 1.2
         cursor: pointer
         display: table
+        font-size: 15px
+        margin-bottom: 14px
         +prefix(transition, all ease-in-out 0.3s, webkit ms)
         &:before
           content: ""
@@ -155,27 +146,31 @@ body.home
         &:hover
           color: lighten($yellow, 15%)
         &.active
-          padding-left: 3vw
+          padding-left: 1vw
           color: $yellow
           cursor: initial
           &:before
             opacity: 1
-            width: 6vw
+            width: 4vw
     .description
-      position: absolute
-      bottom: 0
-      left: 0
       width: 90%
       font-family: space_groteskregular
-      font-size: 14px
-      line-height: 1.33
-      letter-spacing: 2px
+      font-size: 13px
+      line-height: 1.2
+      letter-spacing: 1px
       color: white
-      width: calc(40% - 15px)
+      width: calc(50% - 20px)
+      .url
+        color: $yellow
+        display: table
+        margin-top: 5px
     .wrapper
-      float: right
-      width: calc(60% - 15px)
-      height: 50vh
+      width: calc(50% - 10px)
+      max-width: 500px
+      height: 100%
+      position: absolute
+      top: 0 
+      right: 0
     .snippet
       position: absolute
       width: 100%
@@ -183,6 +178,9 @@ body.home
       opacity: 0
       visibility: hidden
       top: 0
+      background-position: center
+      background-size: cover
+      background-repeat: no-repeat
       +prefix(transition, all ease-in-out 0.3s, webkit ms)
       &.active
         opacity: 1
@@ -191,6 +189,16 @@ body.home
         height: 100%
         iframe
           height: 100%
+    .container.after-element
+      &:after
+        content: ""
+        width: 110%
+        height: 110%
+        background-color: $gray 
+        position: absolute
+        bottom: -5%
+        left: -10%
+        z-index: -1
   section.contact
     margin-top: 150px
     padding-bottom: 23vh
@@ -267,7 +275,12 @@ body.home
         +prefix(transform, translate(0,0), webkit ms)
     section.snippets
       padding: 12vh 0
-      height: auto
+      .tabs, .description, .wrapper
+        width: 100%
+      .wrapper
+        height: 200px
+        position: relative
+        margin: 0 auto
       .tabs
         width: 100%
         position: relative
@@ -279,17 +292,19 @@ body.home
           display: inline-block
           font-size: 14px
           &:not(:first-child)
-            margin-left: 8vw
+            margin-left: 11vw
           &.active
             padding-left: 0
             text-decoration: underline
             &:before
               display: none
+      .container.after-element
+        &:after
+          height: 105%
       .description
-        position: relative
         width: 100%
         padding: 35px 0
-        height: 140px
+        min-height: 150px
         &:before
           content: ""
           position: absolute
@@ -310,9 +325,10 @@ body.home
           background: rgb(0,0,0)
           background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%)
           pointer-events: none
-      .wrapper
-        width: 100%
-        height: 40vh
+        a
+          margin: 10px 0
+          &:hover
+            color: $hoverLink
     section.contact
       margin-top: 15vh
       padding-bottom: 10vh

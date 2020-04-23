@@ -195,6 +195,8 @@ const terminalLines = {
     "|  * React: 7.5/10",
     "|  * Angular: 5/10",
     "- PHP: 7/10",
+    "|  * Wordpress: 8/10",
+    "|  * Laravel: 5/10",
     "- Python: 6/10",
     "- Git: 6/10",
     " ",
@@ -272,7 +274,7 @@ const terminalLines = {
   ]
 }
 
-const speedText = 60
+const speedText = 50
 
 let Effect = new TerminalEffect({
   lines: terminalLines["Programmer"], 
@@ -303,16 +305,25 @@ const $snippets = document.querySelectorAll("#snippets .wrapper .snippet")
 
 $tabs.forEach((e,i)=>{
   e.addEventListener("click", (e)=>{
-    const $description = document.querySelector("#snippets .description")
+    const $text = document.querySelector("#snippets .description .text")
+    const $url = document.querySelector("#snippets .description .url")
     const activeTab = e.target
+    const $activeTab = document.querySelector(`#snippets .tabs .tab.${ACTIVECLASS}`)
+    const $activeSnippet = document.querySelector(`#snippets .wrapper .snippet.${ACTIVECLASS}`)
     
-    document.querySelector(`#snippets .tabs .tab.${ACTIVECLASS}`).classList.remove(ACTIVECLASS)
-    document.querySelector(`#snippets .wrapper .snippet.${ACTIVECLASS}`).classList.remove(ACTIVECLASS)
+    $activeTab.classList.remove(ACTIVECLASS)
+    $activeSnippet.classList.remove(ACTIVECLASS)
 
     activeTab.classList.add(ACTIVECLASS)
     $snippets[i].classList.add(ACTIVECLASS)
-    $description.innerText = activeTab.dataset.description
+    $text.innerText = activeTab.dataset.description
+    $url.innerText = ""
 
+    if(activeTab.dataset.cta && activeTab.dataset.url){
+      $url.innerText = activeTab.dataset.cta
+      $url.href = activeTab.dataset.url
+    }
+    gtag('event', 'btntrack', {'event_category': 'workbtn', 'event_label': activeTab.innerText});
   })
 })
 
