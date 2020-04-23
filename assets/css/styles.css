@@ -755,7 +755,7 @@ body.home section.contact form .submit:hover {
     white-space: nowrap;
     padding-left: 0;
     overflow: auto;
-    padding: 15px 0;
+    padding: 15px 20vw 15px 15px;
   }
   body.home section.snippets .tabs .tab {
     display: inline-block;
