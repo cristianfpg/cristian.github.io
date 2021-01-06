@@ -67,17 +67,6 @@ setTimeout(()=>{
 /* INIT TERMINAL EFFECT */
 // http://vanilla-js.com/
 
-// valueExample = [
-//   {
-//     beginLine: "begin line",
-//     animated: "animated",
-//     isLink: false,
-//     url: "https://google.com",
-//     clear: false
-//   },
-//   "simple line",
-// ]
-
 const $terminal = document.getElementById("lines")
 
 class TerminalEffect {
@@ -191,21 +180,19 @@ const terminalLines = {
     "Skills",
     " ",
     "- SASS: 9/10",
-    "- Javascript: 8.5/10",
-    "|  * React: 7.5/10",
-    "|  * Angular: 5/10",
+    "- Javascript: 8/10",
+    "|  * React: 7/10",
     "- PHP: 7/10",
-    "|  * Wordpress: 8/10",
-    "|  * Laravel: 5/10",
-    "- Python: 6/10",
+    "|  * Wordpress: 7/10",
+    "|  * Laravel: 7/10",
+    "- Python: 5/10",
     "- Git: 6/10",
     " ",
     "Tools",
     " ",
     "- Illustrator: 8/10",
     "- Photoshop: 8/10",
-    "- XD: 7/10",
-    "- Sketch: 6/10"
+    "- XD: 7/10"
   ],
   "videogames": [
     {
@@ -221,12 +208,12 @@ const terminalLines = {
     {
       animated: "League of legends",
       isLink: true,
-      url: "https://lan.op.gg/summoner/userName=R%C3%A1gnaros"
+      url: "https://lan.op.gg/summoner/userName=Inferno%20Trigger"
     },
     {
       animated: "Teamfight Tactics",
       isLink: true,
-      url: "https://lolchess.gg/profile/lan/r%C3%A1gnaros"
+      url: "https://lolchess.gg/profile/lan/infernotrigger"
     },
     {
       animated: "Overwatch",
